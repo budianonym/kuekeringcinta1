@@ -50,7 +50,7 @@
                             <div class="top_bar_left clearfix">
                                 <!-- Logo-->
                                 <div class="logo">
-                                    <a id="logo" href="../../index.html" title="BeBaker - BeTheme"><img class="scale-with-grid" src="images/bakery.png" alt="BeBaker - BeTheme" />
+                                    <a id="logo" href="../../index.html" title="KueKeringCinta - Averoa"><img class="scale-with-grid" src="images/kuekeringcinta.png" alt="KueKeringCinta - Averoa" />
                                     </a>
                                 </div>
                                 <!-- Main menu-->
@@ -61,7 +61,7 @@
                                                 <a href="../../index.html"><span>Home</span></a>
                                             </li>
                                             <li>
-                                                <a href="about.html"><span>About BeBakery</span></a>
+                                                <a href="about.html"><span>About KueKeringCinta</span></a>
                                             </li>
                                             <li>
                                                 <a href="products.html"><span>Products</span></a>
@@ -111,14 +111,14 @@
             <div class="content_wrapper clearfix">
                 <div class="sections_group">
                     <div class="entry-content">
-                        <div class="section full-width sections_style_0 ">
+                        <!-- <div class="section full-width sections_style_0 ">
                             <div class="section_wrapper clearfix">
-                                <div class="items_group clearfix">
+                                <div class="items_group clearfix"> -->
                                     <!-- One full width row-->
-                                    <div class="column one column_map">
+                                    <!-- <div class="column one column_map"> -->
 
                                         <!-- Google map area -->
-                                        <div class="google-map-wrapper">
+                                        <!-- <div class="google-map-wrapper">
                                             <div class="google-map" id="google-map-area" style="width:100%; height:600px;">
                                                 &nbsp;
                                             </div>
@@ -126,7 +126,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="section" style="padding-top:50px; padding-bottom:0px; ">
                             <div class="section_wrapper clearfix">
                                 <div class="items_group clearfix">
@@ -139,7 +139,13 @@
                                     <!-- Two Third (2/3) Column -->
                                     <div class="column two-third column_image">
                                         <div class="image_frame no_link scale-with-grid no_border">
-                                            <div class="image_wrapper"><img class="scale-with-grid" src="images/home_baker_contact_photo.jpg" alt="">
+                                            <div class="google-map-wrapper">
+                                                
+                                                <!-- <img class="scale-with-grid" src="images/home_baker_contact_photo.jpg" alt=""> -->
+                                                <div class="google-map scale-with-grid" id="google-map-area" style="width:100%; height:600px;">
+                                                    &nbsp;
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -153,7 +159,7 @@
                                                     Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit.
                                                 </p>
                                                 <hr class="no_line hrmargin_b_30" />
-                                                <h5 class="hrmargin_b_7">BeBakery</h5>
+                                                <h5 class="hrmargin_b_7">KueKeringCinta</h5>
                                                 <p class="big">
                                                     Level 13, 2 Elizabeth St,
                                                     <br> Melbourne, Victoria 3000
@@ -205,7 +211,7 @@
                                                         <textarea placeholder="Message" name="body" id="body" style="width:100%;" rows="10" aria-invalid="false"></textarea>
                                                     </div>
                                                     <div class="column one">
-                                                        <input type="button" value="Send Message" id="submit" onClick="return check_values();">
+                                                        <input type="button" value="Send Message" id="submit" onClick="return wa_me();">
                                                     </div>
                                                 </form>
                                             </div>
@@ -227,7 +233,7 @@
                     <div class="column one">
                         <a id="back_to_top" href="#" class="button button_left button_js"><span class="button_icon"><i class="icon-up-open-big"></i></span></a>
                         <div class="copyright">
-                            &copy; 2017 BeBaker - Averoa. All Rights Reserved. <a target="_blank" rel="nofollow" href="https://averoa.com">Averoa</a>
+                            &copy; 2017 KueKeringCinta - by <a target="_blank" rel="nofollow" href="https://averoa.com">Averoa</a>. All Rights Reserved.
                         </div>
                         <!--Social info area-->
                         <ul class="social"></ul>
@@ -295,6 +301,35 @@
             zoom: 19
           })
         });
+
+        function wa_me(){
+
+            var $j = jQuery.noConflict();
+        
+        var name = '';
+        var email = '';
+        var subject = '';
+        var body = '';
+        
+        if(typeof $j('#contactform #name').val() != "undefined" )
+        {
+         name = document.getElementById("name").value;
+        }
+        if(typeof $j('#contactform #email').val() != "undefined" )
+        {
+         email = document.getElementById("email").value;
+        }
+        if(typeof $j('#contactform #subject').val() != "undefined" )
+        {
+         subject = document.getElementById("subject").value;
+        }
+        if(typeof $j('#contactform #body').val() != "undefined" )
+        {
+         body = document.getElementById("body").value;
+        }
+        // window.location = `https://wa.me/6285729474017?text=*Nama:*${name}%0a*Email:*${email}%0a*Subject:*${subject}%0a*Message:*${body}`;
+        window.open(`https://wa.me/6285729474017?text=*Nama:* ${name}%0a*Email:* ${email}%0a*Subject:* ${subject}%0a*Message:* ${body}`, '_blank');
+        }
       </script>
 
 </body>
